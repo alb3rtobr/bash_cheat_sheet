@@ -13,6 +13,8 @@ Compilation of bash scripting useful tips &amp; tricks
   * [Delete an array](#delete-an-array)
 * [Generate random string](#generate-random-string)
 * [Create semaphore files](#create-semaphore-files)
+* [Add a clean-up function to a script]
+
 
 ## Arrays in bash
 
@@ -183,3 +185,15 @@ The created files are read-only, so they have to be deleted with `rm -f`
 [Terminal #2] $ lockfile -r 0 /tmp/the.lock
 [Terminal #2] $
 ```
+
+# Add a clean-up function to a script
+This code will execute the `clean_up` function when the script ends in any case.
+```
+trap clean_up EXIT
+
+function clean_up
+{
+  echo "the end"
+}
+```
+
