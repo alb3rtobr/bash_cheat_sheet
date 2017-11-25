@@ -12,7 +12,7 @@ Compilation of bash scripting useful tips &amp; tricks
   * [Concatenate two arrays](#concatenate-two-arrays)
   * [Delete an array](#delete-an-array)
 * [Generate random string](#generate-random-string)
-
+* [Create semaphore files](#create-semaphore-files)
 
 ## Arrays in bash
 
@@ -164,4 +164,22 @@ Generate a random string of 32 characters, containing only letters and numbers.
 ```
 $ cat /dev/random | tr -dc 'a-zA-Z0-9' | fold -w 32 | head -n 1
 DXGuCD6XAUXMUjRgu8StgTOq0Ayij4uf
+```
+
+# Create semaphore files
+`lockfile` command can be used to create semaphore files. Option `-r` indicates the number of retries before returning error.
+```
+[Terminal #1] $ lockfile -r 0 /tmp/the.lock
+[Terminal #1] $
+
+[Terminal #2] $ lockfile -r 0 /tmp/the.lock
+[Terminal #2] lockfile: Sorry, giving up on "/tmp/the.lock"
+```
+The created files are read-only, so they have to be deleted with `rm -f`
+```
+[Terminal #1] $ rm -f /tmp/the.lock
+[Terminal #1] $
+
+[Terminal #2] $ lockfile -r 0 /tmp/the.lock
+[Terminal #2] $
 ```
