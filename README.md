@@ -14,7 +14,7 @@ Compilation of bash scripting useful tips &amp; tricks
 * [Generate random string](#generate-random-string)
 * [Create semaphore files](#create-semaphore-files)
 * [Add a clean-up function to a script](#add-a-clean-up-function-to-a-script)
-
+* [Find a substring](#find-a-substring)
 
 ## Arrays in bash
 
@@ -217,4 +217,17 @@ $echo $?
 1
 ```
 
+# Find a substring
+```
+$ cat substring.sh
+#!/bin/bash
 
+string="Once upon a time"
+substring="upon"
+if [[ "${string}" =~ "${substring}" ]]; then
+  echo "found!"
+fi
+
+$ ./substring.sh
+found!
+```
