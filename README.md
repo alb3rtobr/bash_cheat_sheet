@@ -1,10 +1,20 @@
 # bash_cheat_sheet
 Compilation of bash scripting useful tips &amp; tricks
 
+* [Arrays in bash](#arrays-in-bash)
+  * [Declare arrays](#declare-arrays)
+  * [Access array elements](#access-array-elements)
+  * [Traverse an array](#traverse-an-array)
+  * [Extract elements of an array](#extract-elements-of-an-array)
+  * [Search and replace in array elements](#search-and-replace-in-array-elements)
+  * [Remove an element](#remove-an-element)
+  * [Copy an array](#copy-an-array)
+  * [Concatenate two arrays](#concatenate-two-arrays)
+  * [Delete an array](#delete-an-array)
 
 ## Arrays in bash
 
-### Declare array
+### Declare arrays
 There are two ways to declare an array:
 
 * Assign values:
@@ -52,7 +62,7 @@ done
 
 ### Extract elements of an array
 
-Extract by offset and length for an array
+* Extract by offset and length for an array
 ```
 $cat arraymanip.sh
 Unix=('Debian' 'Red hat' 'Ubuntu' 'Suse' 'Fedora' 'UTS' 'OpenLinux');
@@ -62,7 +72,7 @@ $./arraymanip.sh
 Suse Fedora
 ```
 
-Extract by offset and length for a given element
+* Extract by offset and length for a given element
 ```
 $cat arraymanip.sh
 #! /bin/bash
@@ -111,7 +121,6 @@ Debian Ubuntu Suse Fedora
 
 
 ### Copy an array
-* Copy an array
 ```
 unix=('Debian' 'Red hat' 'Ubuntu' 'Suse' 'Fedora' 'UTS' 'OpenLinux');
 Linux=("${unix[@]}")
