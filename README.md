@@ -13,7 +13,7 @@ Compilation of bash scripting useful tips &amp; tricks
   * [Delete an array](#delete-an-array)
 * [Generate random string](#generate-random-string)
 * [Create semaphore files](#create-semaphore-files)
-* [Add a clean-up function to a script]
+* [Add a clean-up function to a script](#add_a_clean-up_function_to_a_script)
 
 
 ## Arrays in bash
