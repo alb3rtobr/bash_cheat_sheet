@@ -196,4 +196,25 @@ function clean_up
   echo "the end"
 }
 ```
+The exit code of the clean-up function will not affect the exit code of the script:
+```
+$ cat cleanup.sh
+#!/bin/bash
+
+trap clean_up EXIT
+
+function clean_up
+{
+  echo "the end"
+  return 0
+}
+exit 1
+
+$./cleanup.sh
+the end
+
+$echo $?
+1
+```
+
 
