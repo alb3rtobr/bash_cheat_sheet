@@ -11,6 +11,8 @@ Compilation of bash scripting useful tips &amp; tricks
   * [Copy an array](#copy-an-array)
   * [Concatenate two arrays](#concatenate-two-arrays)
   * [Delete an array](#delete-an-array)
+* [Generate random string](#generate-random-string)
+
 
 ## Arrays in bash
 
@@ -155,4 +157,11 @@ echo ${#UnixShell[@]}
 
 $ ./arraymanip.sh
 0
+```
+
+# Generate random string
+Generate a random string of 32 characters, containing only letters and numbers.
+```
+$ cat /dev/random | tr -dc 'a-zA-Z0-9' | fold -w 32 | head -n 1
+DXGuCD6XAUXMUjRgu8StgTOq0Ayij4uf
 ```
