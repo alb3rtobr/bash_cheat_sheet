@@ -1,4 +1,4 @@
-# bash_cheat_sheet
+# Bash cheat sheet
 Compilation of bash scripting useful tips &amp; tricks
 
 * [Arrays in bash](#arrays-in-bash)
