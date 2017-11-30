@@ -1,6 +1,7 @@
 # Bash cheat sheet
 Compilation of bash scripting useful tips &amp; tricks
 
+* [Check script syntax](#check-script-syntax)
 * [Arrays in bash](#arrays-in-bash)
   * [Declare arrays](#declare-arrays)
   * [Access array elements](#access-array-elements)
@@ -15,6 +16,24 @@ Compilation of bash scripting useful tips &amp; tricks
 * [Create semaphore files](#create-semaphore-files)
 * [Add a clean-up function to a script](#add-a-clean-up-function-to-a-script)
 * [Find a substring](#find-a-substring)
+
+## Check script syntax
+Syntax can be checked using `bash -n`
+
+```
+$ cat test.sh
+#!/bin/bash
+
+declare -a my_array=('a' 'b' 'c')
+
+for elem in ${my_array[@]};do
+  echo ${elem}
+
+echo "End"
+
+$ bash -n test.sh
+test.sh: line 9: syntax error: unexpected end of file
+```
 
 ## Arrays in bash
 
