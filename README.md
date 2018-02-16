@@ -16,6 +16,7 @@ Compilation of bash scripting useful tips &amp; tricks
 * [Create semaphore files](#create-semaphore-files)
 * [Add a clean-up function to a script](#add-a-clean-up-function-to-a-script)
 * [Find a substring](#find-a-substring)
+* [Variable indirect references](#variable-indirect-references)
 
 ## Check script syntax
 Syntax can be checked using `bash -n`
@@ -249,4 +250,17 @@ fi
 
 $ ./substring.sh
 found!
+```
+
+# Variable indirect references
+```
+$ cat indirect_reference.sh 
+#!/bin/bash
+
+variable_to_use="name"
+name="John"
+echo ${!variable_to_use}
+
+$ ./indirect_reference.sh
+John
 ```
