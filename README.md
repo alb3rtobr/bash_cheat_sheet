@@ -13,6 +13,7 @@ Compilation of bash scripting useful tips &amp; tricks
   * [Concatenate two arrays](#concatenate-two-arrays)
   * [Delete an array](#delete-an-array)
 * [Generate random string](#generate-random-string)
+* [Split string and create array](#split-string-and-create-array)
 * [Create semaphore files](#create-semaphore-files)
 * [Add a clean-up function to a script](#add-a-clean-up-function-to-a-script)
 * [Find a substring](#find-a-substring)
@@ -179,6 +180,13 @@ echo ${#UnixShell[@]}
 
 $ ./arraymanip.sh
 0
+```
+
+### Split string and create array
+```
+string="a,b,c,d"
+declare -a array
+read -r -a array <<< `echo $string | sed -r 's/,/ /g'`
 ```
 
 # Generate random string
