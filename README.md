@@ -182,18 +182,18 @@ $ ./arraymanip.sh
 0
 ```
 
-### Split string and create array
-```
-string="a,b,c,d"
-declare -a array
-read -r -a array <<< `echo $string | sed -r 's/,/ /g'`
-```
-
 # Generate random string
 Generate a random string of 32 characters, containing only letters and numbers.
 ```
 $ cat /dev/random | tr -dc 'a-zA-Z0-9' | fold -w 32 | head -n 1
 DXGuCD6XAUXMUjRgu8StgTOq0Ayij4uf
+```
+
+# Split string and create array
+```
+string="a,b,c,d"
+declare -a array
+read -r -a array <<< `echo $string | sed -r 's/,/ /g'`
 ```
 
 # Create semaphore files
